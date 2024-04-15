@@ -40,7 +40,10 @@ function redactText(originalText, wordsToRedact, replacement = '****') {
     return redactedText;
 }
 
-document.getElementById('redactButton').addEventListener('click', function() {
+document.getElementById('redactButton').addEventListener('click', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
     // Get the input values
     let originalText = document.getElementById('originalText').value;
     let wordsToRedact = document.getElementById('wordsToRedact').value;
@@ -52,6 +55,7 @@ document.getElementById('redactButton').addEventListener('click', function() {
     // Update the inner HTML of the #redactedText paragraph element with the redacted text
     document.getElementById('redactedText').innerHTML = redactedText;
 });
+
 
 
 // Example usage
