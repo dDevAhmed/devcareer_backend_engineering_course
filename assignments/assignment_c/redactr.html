@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>REDACTR - SafeText Scrambler</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>REDACTR</h1>
+                <p>Welcome to SafeText Scrambler! This web app helps you securely share content on social media by scrambling portions of text you prefer to keep private. Simply enter your text and specify the words you want to scramble. After clicking "Redact Now", the app will scan through your text and replace the specified words with your chosen replacement.</p>
+            </header>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        SafeText Scrambler
+                    </div>
+                    <div class="card-body">
+                        <p id="redactedText"></p>
+                        <form id="redactForm">
+                            <div class="mb-3">
+                                <!-- <label for="originalText" class="form-label">Enter your text:</label> -->
+                                <textarea class="form-control" id="originalText" rows="8" placeholder="Enter your text" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="wordsToRedact" class="form-label">Words to redact (space seperated)</label>
+                                <input type="text" class="form-control" id="wordsToRedact" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="replacement" class="form-label">Replacement</label>
+                                <input type="text" class="form-control" id="replacement" placeholder="replacement characters (e.g., ****, ????, ####)" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="redactButton">Redact Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        Scrambling Stats
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Words Scanned:</strong> <span id="wordsScanned"></span></p>
+                        <p><strong>Matched Words:</strong> <span id="matchedWords"></span></p>
+                        <p><strong>Characters Typed:</strong> <span id="charactersTyped"></span></p>
+                        <p><strong>Characters Scrambled:</strong> <span id="charactersScrambled"></span></p>
+                        <p><strong>Scrambling Time:</strong> <span id="scramblingTime"></span> seconds</p>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
